@@ -5,7 +5,7 @@ import com.google.gson.GsonBuilder;
 import com.google.gson.stream.JsonReader;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import nl.timonschultz.hots.core.model.HeroInputModel;
+import nl.timonschultz.hots.core.map.model.MapInputModel;
 import org.springframework.stereotype.Service;
 
 import java.io.IOException;
@@ -19,17 +19,20 @@ import java.net.URL;
 @AllArgsConstructor
 public class Reader {
 
-    public void readStream() {
+//    private MapImportService mapImportService;
 
-        try (InputStream is = new URL("http://hotsapi.net/api/v1/heroes").openStream()) {
+    public void readStream(String url) {
+
+        try (InputStream is = new URL(url).openStream()) {
 
             JsonReader reader = new JsonReader(new InputStreamReader(is, "UTF-8"));
             Gson gson = new GsonBuilder().create();
 
             reader.beginArray();
             while (reader.hasNext()) {
-                HeroInputModel hero = gson.fromJson(reader, HeroInputModel.class);
-                System.out.println(hero.getName());
+                MapInputModel map = gson.fromJson(reader, MapInputModel.class);
+                System.out.println(map.getName());
+//                mapImportService.add(map);
             }
 
             reader.close();

@@ -19,6 +19,7 @@
         <module>hots-api</module>
         <module>hots-boot</module>
         <module>hots-core</module>
+        <module>hots-persistence</module>
     </modules>
 
     <properties>
@@ -27,6 +28,7 @@
         <java.version>1.8</java.version>
         <lombok.version>1.16.22</lombok.version>
         <gson.version>2.8.2</gson.version>
+        <org.mapstruct.version>1.2.0.Final</org.mapstruct.version>
     </properties>
 
     <dependencyManagement>
@@ -47,6 +49,11 @@
                 <version>${project.version}</version>
             </dependency>
             <dependency>
+                <groupId>nl.timonschultz.hots</groupId>
+                <artifactId>hots-persistence</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
                 <groupId>org.projectlombok</groupId>
                 <artifactId>lombok</artifactId>
                 <version>${lombok.version}</version>
@@ -55,6 +62,11 @@
                 <groupId>com.google.code.gson</groupId>
                 <artifactId>gson</artifactId>
                 <version>${gson.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.mapstruct</groupId>
+                <artifactId>mapstruct-jdk8</artifactId>
+                <version>${org.mapstruct.version}</version>
             </dependency>
         </dependencies>
     </dependencyManagement>

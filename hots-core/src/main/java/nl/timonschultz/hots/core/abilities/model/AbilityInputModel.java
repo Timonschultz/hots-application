@@ -1,4 +1,4 @@
-package nl.timonschultz.hots.core.model;
+package nl.timonschultz.hots.core.abilities.model;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;

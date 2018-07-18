@@ -1,4 +1,4 @@
-package nl.timonschultz.hots.core.model;
+package nl.timonschultz.hots.core.icon.model;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;

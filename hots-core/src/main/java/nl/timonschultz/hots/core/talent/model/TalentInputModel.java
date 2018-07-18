@@ -1,7 +1,8 @@
-package nl.timonschultz.hots.core.model;
+package nl.timonschultz.hots.core.talent.model;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
+import nl.timonschultz.hots.core.icon.model.IconUrl;
 
 @Getter
 @AllArgsConstructor
