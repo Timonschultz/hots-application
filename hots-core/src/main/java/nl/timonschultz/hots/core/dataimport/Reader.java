@@ -5,6 +5,7 @@ import com.google.gson.GsonBuilder;
 import com.google.gson.stream.JsonReader;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import nl.timonschultz.hots.core.dataimport.MapImportService.MapImportService;
 import nl.timonschultz.hots.core.map.model.MapInputModel;
 import org.springframework.stereotype.Service;
 
@@ -19,7 +20,7 @@ import java.net.URL;
 @AllArgsConstructor
 public class Reader {
 
-//    private MapImportService mapImportService;
+    private MapImportService mapImportService;
 
     public void readStream(String url) {
 
@@ -31,8 +32,8 @@ public class Reader {
             reader.beginArray();
             while (reader.hasNext()) {
                 MapInputModel map = gson.fromJson(reader, MapInputModel.class);
-                System.out.println(map.getName());
-//                mapImportService.add(map);
+
+                mapImportService.add(map);
             }
 
             reader.close();

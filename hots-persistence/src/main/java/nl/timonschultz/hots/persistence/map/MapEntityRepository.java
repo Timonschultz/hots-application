@@ -5,4 +5,6 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface MapEntityRepository extends JpaRepository<MapEntity, Long> {
+
+    MapEntity existsAllById(Long id);
 }
