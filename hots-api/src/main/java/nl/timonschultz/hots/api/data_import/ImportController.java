@@ -1,7 +1,7 @@
 package nl.timonschultz.hots.api.data_import;
 
 import lombok.AllArgsConstructor;
-import nl.timonschultz.hots.core.dataimport.Reader;
+import nl.timonschultz.hots.core.util.Reader;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 

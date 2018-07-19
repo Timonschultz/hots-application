@@ -6,9 +6,9 @@ import org.springframework.stereotype.Component;
 
 @Component
 public class IconModelMapper {
-    
+
     public IconEntity toEntity(IconModel iconModel) {
         return IconEntity.builder().icon(iconModel.getIcon()).build();
     }
-    
+
 }

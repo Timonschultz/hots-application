@@ -1,6 +1,6 @@
-package nl.timonschultz.hots.core.dataimport.MapImportService;
+package nl.timonschultz.hots.core.map.service;
 
-import lombok.AllArgsConstructor;
+import lombok.RequiredArgsConstructor;
 import nl.timonschultz.hots.core.map.mapper.MapModelMapper;
 import nl.timonschultz.hots.core.map.model.MapInputModel;
 import nl.timonschultz.hots.persistence.map.MapEntityRepository;
@@ -9,16 +9,16 @@ import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
 
 @Service
-@AllArgsConstructor
+@RequiredArgsConstructor
 @Transactional(propagation = Propagation.REQUIRED)
-public class MapImportService {
+public class MapService {
 
-    private MapModelMapper mapModelMapper;
-    private MapEntityRepository mapEntityRepository;
+    private final MapModelMapper mapModelMapper;
+    private final MapEntityRepository mapEntityRepository;
 
     public void add(final MapInputModel mapInputModel) {
         System.out.println(mapInputModel.getName());
-        mapEntityRepository.save(mapModelMapper.toMapEntity(mapInputModel));
+        mapEntityRepository.save(mapModelMapper.toEntity(mapInputModel));
     }
 
 }
