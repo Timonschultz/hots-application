@@ -1,9 +1,6 @@
 package nl.timonschultz.hots.persistence.talent;
 
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 import nl.timonschultz.hots.persistence.common.HasId;
 import nl.timonschultz.hots.persistence.icon.IconEntity;
 
@@ -14,7 +11,7 @@ import javax.persistence.OneToOne;
 @NoArgsConstructor
 @AllArgsConstructor
 @Getter
-@Setter
+@Builder
 public class TalentEntity extends HasId<Long> {
 
     private String name;

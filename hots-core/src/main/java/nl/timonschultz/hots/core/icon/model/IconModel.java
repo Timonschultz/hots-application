@@ -6,7 +6,8 @@ import java.util.Map;
 
 @Getter
 @AllArgsConstructor
-public class IconUrl {
+public class IconModel {
 	
 	Map<String, String> icon;
+
 }

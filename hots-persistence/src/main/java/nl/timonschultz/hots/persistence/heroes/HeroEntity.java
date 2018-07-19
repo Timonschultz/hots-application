@@ -1,9 +1,9 @@
 package nl.timonschultz.hots.persistence.heroes;
 
 import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
-import lombok.Setter;
 import nl.timonschultz.hots.persistence.abilities.AbilityEntity;
 import nl.timonschultz.hots.persistence.common.HasId;
 import nl.timonschultz.hots.persistence.icon.IconEntity;
@@ -16,7 +16,7 @@ import java.util.List;
 @NoArgsConstructor
 @AllArgsConstructor
 @Getter
-@Setter
+@Builder
 public class HeroEntity extends HasId<Long> {
 
     private String name;
@@ -27,13 +27,13 @@ public class HeroEntity extends HasId<Long> {
     private List<String> translations;
 
     @OneToOne
-    private IconEntity iconUrl;
+    private IconEntity icon;
 
     private String role;
     private String type;
     private String releaseDate;
 
-    @OneToMany(mappedBy = "id", cascade={CascadeType.PERSIST})
+    @OneToMany(mappedBy = "id", cascade = {CascadeType.PERSIST})
     private List<AbilityEntity> abilities;
 
     @OneToMany(mappedBy = "id", cascade = CascadeType.ALL)

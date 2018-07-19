@@ -1,9 +1,6 @@
 package nl.timonschultz.hots.persistence.abilities;
 
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 import nl.timonschultz.hots.persistence.common.HasId;
 
 import javax.persistence.Entity;
@@ -12,7 +9,7 @@ import javax.persistence.Entity;
 @NoArgsConstructor
 @AllArgsConstructor
 @Getter
-@Setter
+@Builder
 public class AbilityEntity extends HasId<Long> {
 
     private String owner;

@@ -1,9 +1,6 @@
 package nl.timonschultz.hots.persistence.icon;
 
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 import nl.timonschultz.hots.persistence.common.HasId;
 
 import javax.persistence.*;
@@ -14,7 +11,7 @@ import java.util.Map;
 @NoArgsConstructor
 @AllArgsConstructor
 @Getter
-@Setter
+@Builder
 public class IconEntity extends HasId<Long> {
 
     @ElementCollection
